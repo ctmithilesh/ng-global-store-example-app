@@ -4,18 +4,16 @@ import { Observable } from 'rxjs';
 import { decrement, increment } from 'src/actions/counter/counter.action';
 
 @Component({
-  selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+  selector: 'app-home',
+  templateUrl: './home.component.html',
+  styleUrls: ['./home.component.css']
 })
-export class AppComponent {
-  title = 'ng-global-store-example-app';
+export class HomeComponent {
 
   count$: Observable<number>;
 
   constructor(
     private store: Store<{ count: number }>
-
   ) {
 
     this.count$ = store.select('count')
@@ -28,5 +26,9 @@ export class AppComponent {
   decrement() {
     this.store.dispatch(decrement())
   }
+
+
+
+
 
 }
